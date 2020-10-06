@@ -208,8 +208,9 @@ esto va a ser el primer cambio
     # plt.pyplot.scatter(gpd_random_ptos['P_INTERPOLA'], gpd_random_ptos['RF_FOSFORO_250m'], color="blue", label="original", s=0.7)
     # plt.pyplot.scatter( gpd_random_ptos['RF_FOSFORO_250m'], gpd_random_ptos['RF_FOSFORO_250m']- gpd_random_ptos['P_INTERPOLA'], color="blue", label="original", s=0.7)
     
+    # Este cambio va al main
     plt.pyplot.scatter(gpd_random_ptos['P_INTERPOLA'], gpd_random_ptos['SK_FOSFORO_CyL_250m'], color="blue", label="original", s=0.7)
-    # plt.pyplot.scatter( gpd_random_ptos['SK_FOSFORO_CyL_250m'], gpd_random_ptos['SK_FOSFORO_CyL_250m']- gpd_random_ptos['P_INTERPOLA'], color="blue", label="original", s=0.7)
+    plt.pyplot.scatter( gpd_random_ptos['SK_FOSFORO_CyL_250m'], gpd_random_ptos['SK_FOSFORO_CyL_250m']- gpd_random_ptos['P_INTERPOLA'], color="blue", label="original", s=0.7)
     
     # plt.plot(x, yhat, color="red", label="predicted")
     plt.legend()

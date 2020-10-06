@@ -192,7 +192,7 @@ if __name__ == '__main__':
     # removeColumns = ['ORIGEN', 'SEASON', 'LABORATORIO', 'MO_PORC', 'MATERIA_ORGANICA', 'ARENA_PORC', 'LIMO_PORC', 'ARCILLA_PORC', 'TEXTURA', 'pH', 'ACIDEZ_BASICIDAD','CARBONATOS_PORC','NITROGENO_PORC', 'POTASIO_PPM', 'POTASIO', 'CALCIO_PPM','MAGNESIO_PPM', 'SODIO_PPM', 'PUBLICOS', 'TEXTCALCU', 'GRUPO_TEXTURA', 'TIPO', 'P_OLSEN_PPM','P_BRAY_PPM', 'P_BRAY', 'GEO_WKT']    
     # gpd_ptos.drop(removeColumns, axis = 1).to_sql('P_ERRORES_INTERPOLA', conn, if_exists='replace', index=False)
     #
-esto va a ser el primer cambio
+
 
     gpd_random_ptos = gpd_ptos.sample(frac=0.3)
     gpd_random_ptos = gpd_random_ptos.loc[gpd_random_ptos['RF_FOSFORO_250m']>0.0,:]
@@ -204,9 +204,9 @@ esto va a ser el primer cambio
     rmse_RF = metrics.mean_squared_error(gpd_random_ptos['P_INTERPOLA'],gpd_random_ptos['RF_FOSFORO_250m'])
     rmse_SK = metrics.mean_squared_error(gpd_random_ptos['P_INTERPOLA'],gpd_random_ptos['SK_FOSFORO_CyL_250m'])
 
-
-    # plt.pyplot.scatter(gpd_random_ptos['P_INTERPOLA'], gpd_random_ptos['RF_FOSFORO_250m'], color="blue", label="original", s=0.7)
-    # plt.pyplot.scatter( gpd_random_ptos['RF_FOSFORO_250m'], gpd_random_ptos['RF_FOSFORO_250m']- gpd_random_ptos['P_INTERPOLA'], color="blue", label="original", s=0.7)
+    
+    plt.pyplot.scatter(gpd_random_ptos['P_INTERPOLA'], gpd_random_ptos['RF_FOSFORO_250m'], color="blue", label="original", s=0.7)
+    plt.pyplot.scatter( gpd_random_ptos['RF_FOSFORO_250m'], gpd_random_ptos['RF_FOSFORO_250m']- gpd_random_ptos['P_INTERPOLA'], color="blue", label="original", s=0.7)
     
     # Este cambio va al main
     plt.pyplot.scatter(gpd_random_ptos['P_INTERPOLA'], gpd_random_ptos['SK_FOSFORO_CyL_250m'], color="blue", label="original", s=0.7)
